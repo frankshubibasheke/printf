@@ -3,7 +3,7 @@
 void print_buffer(char buffer[], int *buff_ind);
 
 /**
- * _printf - Printf function
+ * printf - Printf function
  * @format: format.
  * Return: Printed chars.
  */
@@ -41,6 +41,7 @@ int _printf(const char *format, ...)
 					flags, width, precision, size);
 			if (printed == -1)
 				return (-1);
+
 			printed_chars += printed;
 		}
 	}
