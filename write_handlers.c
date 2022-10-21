@@ -239,5 +239,3 @@ int write_num(int ind, char buffer[], int flags, int width, int prec, int length
 		buffer[--ind] = extra_c;
 		return (write(1, &buffer[ind], BUFF_SIZE - ind - 1));
 		}
-Footer
-© 2022 GitHub, Inc.
