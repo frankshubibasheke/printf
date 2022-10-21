@@ -180,5 +180,3 @@ int print_non_printable(va_list types, char buffer[], int flags, int width, int 
  }
  return (count);
  }
-Footer
-© 2022 GitHub, Inc.
