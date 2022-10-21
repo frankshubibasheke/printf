@@ -48,5 +48,3 @@ int handle_print(const char *fmt, int *ind, va_list list, char buffer[], int fla
 	}
 	return (printed_chars);
 	}
-Footer
-© 2022 GitHub, Inc.
