@@ -1,36 +1,78 @@
-#include "main.h"
-
+#include <stdarg.h>
+#include <unistd.h>
+#include "holberton.h"
 /**
- * get_width - Calculates the width for printing
- * @format: Formatted string in which to print the arguments.
- * @i: List of arguments to be printed.
- * @list: list of arguments.
- *
- * Return: width.
- */
-int get_width(const char *format, int *i, va_list list)
+  * find_function - function that finds formats for _printf
+  * calls the corresponding function.
+  * @format: format (char, string, int, decimal)
+  * Return: NULL or function associated ;
+  */
+int (*find_function(const char *format))(va_list)
 {
-int curr_i;
-int width = 0;
+	unsigned int i = 0;
+	code_f find_f[] = {
+		{"c", print_char},
+		{"s", print_string},
+		{"i", print_int},
+		{"d", print_dec},
+		{"r", print_rev},
+		{"b", print_bin},
+		{"u", print_unsig},
+		{"o", print_octal},
+		{"x", print_x},
+		{"X", print_X},
+		{"R", print_rot13},
+		{NULL, NULL}
+	};
 
-for (curr_i = *i + 1; format[curr_i] != '\0'; curr_i++)
-{
-if (is_digit(format[curr_i]))
-{
-width *= 10;
-width += format[curr_i] - '0';
+	while (find_f[i].sc)
+	{
+		if (find_f[i].sc[0] == (*format))
+			return (find_f[i].f);
+		i++;
+	}
+	return (NULL);
 }
-else if (format[curr_i] == '*')
+/**
+  * _printf - function that produces output according to a format.
+  * @format: format (char, string, int, decimal)
+  * Return: size the output text;
+  */
+int _printf(const char *format, ...)
 {
-curr_i++;
-width = va_arg(list, int);
-break;
-}
-else
-break;
-}
+	va_list ap;
+	int (*f)(va_list);
+	unsigned int i = 0, cprint = 0;
 
-*i = curr_i - 1;
-
-return (width);
+	if (format == NULL)
+		return (-1);
+	va_start(ap, format);
+	while (format[i])
+	{
+		while (format[i] != '%' && format[i])
+		{
+			_putchar(format[i]);
+			cprint++;
+			i++;
+		}
+		if (format[i] == '\0')
+			return (cprint);
+		f = find_function(&format[i + 1]);
+		if (f != NULL)
+		{
+			cprint += f(ap);
+			i += 2;
+			continue;
+		}
+		if (!format[i + 1])
+			return (-1);
+		_putchar(format[i]);
+		cprint++;
+		if (format[i + 1] == '%')
+			i += 2;
+		else
+			i++;
+	}
+	va_end(ap);
+	return (cprint);
 }
