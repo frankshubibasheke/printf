@@ -31,5 +31,3 @@ int get_flags(const char *format, int *i)
 	
 	return (flags);
 }
-Footer
-© 2022 GitHub, Inc.
