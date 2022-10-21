@@ -65,6 +65,3 @@ int _printf(const char *format, ...)
 			
 			*buff_ind = 0;
 			}
-			
-Footer
-© 2022 GitHub, Inc.
