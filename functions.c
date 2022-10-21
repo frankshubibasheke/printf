@@ -182,5 +182,3 @@ int print_binary(va_list types, char buffer[],
 	}
 	return (count);
 }
-Footer
-© 2022 GitHub, Inc.
