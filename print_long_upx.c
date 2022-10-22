@@ -43,5 +43,3 @@ int prinlupx(va_list arguments, char *buf, unsigned int ibuf)
 	free(hexadecimal);
 	return (count);
 }
-Footer
-© 2022 GitHub, Inc.
