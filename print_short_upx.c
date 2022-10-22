@@ -47,5 +47,3 @@ int prinhupx(va_list arguments, char *buf, unsigned int ibuf)
 
 	return (count);
 }
-Footer
-© 2022 GitHub, Inc.
