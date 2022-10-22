@@ -124,6 +124,3 @@ int main(void)
 .SH SEE ALSO
 .R printf(3)
 .SH AUTHORS
-Written by \Prinzwallace && Drimes.
-Footer
-© 2022 GitHub, Inc.
