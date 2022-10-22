@@ -40,5 +40,3 @@ int print_bnr(va_list arguments, char *buf, unsigned int ibuf)
 	free(binary);
 	return (count);
 }
-Footer
-© 2022 GitHub, Inc.
