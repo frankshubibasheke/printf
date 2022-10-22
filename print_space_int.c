@@ -36,5 +36,3 @@ int prinsint(va_list arguments, char *buf, unsigned int ibuf)
 	}
 	return (i + 1);
 }
-Footer
-© 2022 GitHub, Inc.
