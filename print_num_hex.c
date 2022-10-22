@@ -44,5 +44,3 @@ int prinnhex(va_list arguments, char *buf, unsigned int ibuf)
 	free(hexadecimal);
 	return (count + 2);
 }
-Footer
-© 2022 GitHub, Inc.
