@@ -35,5 +35,3 @@ char *fill_binary_array(char *binary, long int int_in, int isneg, int limit)
 	}
 	return (binary);
 }
-Footer
-© 2022 GitHub, Inc.
